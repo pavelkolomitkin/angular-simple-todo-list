@@ -1,0 +1,12 @@
+.item {
+    cursor: pointer;
+}
+
+.item:hover
+{
+    background: #f3f3f3;
+}
+
+.item.selected{
+    background: #cccccc !important;
+}

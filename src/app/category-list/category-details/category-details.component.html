@@ -1,0 +1,9 @@
+<div class="category-details" *ngIf="category !== null; else categoryNotSet;">
+  <h3>{{ category.title }}</h3>
+  <app-todo-list-list></app-todo-list-list>
+</div>
+<ng-template #categoryNotSet>
+  <div class="alert alert-info">
+    Category is not selected!
+  </div>
+</ng-template>

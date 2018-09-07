@@ -1,0 +1,11 @@
+<ul class="list-group">
+  <li
+          app-category-item
+          class="list-group-item item {{ category === selectedItem ? 'selected' : '' }}"
+          *ngFor="let category of categories"
+          [category]="category"
+          (onSelect)="onSelectCategoryHandler(category)"></li>
+</ul>
+<div>
+  <app-category-item-form (onCategoryCreate)="onCreateCategoryHandler($event)"></app-category-item-form>
+</div>
