@@ -1,3 +1,4 @@
+import * as $ from "jquery";
 import { Component } from '@angular/core';
 import {Category} from './models/category.model';
 import { CATEGORIES } from './data.mock';

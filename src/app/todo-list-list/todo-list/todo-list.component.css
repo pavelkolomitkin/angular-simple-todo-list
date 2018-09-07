@@ -1,0 +1,11 @@
+.todo-header
+{
+    padding: 0 !important;
+}
+
+.todo-header .link-button
+{
+    padding: 15px;
+    display: block;
+    text-decoration: none;
+}

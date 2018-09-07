@@ -1,3 +1,24 @@
-<div>
-  {{ todoList.title }} - <b>{{ todoList.todos.length }}</b>
+<div class="panel-heading todo-header" role="tab" [attr.id]="'todo-head-' + orderIndex">
+  <h4 class="panel-title">
+    <a role="button" class="link-button"
+       data-toggle="collapse"
+       data-parent="#accordion"
+       aria-expanded="false"
+       [attr.href]="'#todo-list-' + orderIndex"
+       [attr.aria-controls]="'todo-list-' + orderIndex">
+      {{ todoList.title }} <b>{{ todoList.todos.length }}</b>
+    </a>
+  </h4>
+</div>
+<div [attr.id]="'todo-list-' + orderIndex" class="panel-collapse collapse" role="tabpanel" [attr.aria-labelledby]="'todo-head-' + orderIndex">
+  <div class="panel-body">
+    <div class="todo-list-items" *ngIf="todoList.todos.length > 0; else noTodyMessage">
+      <app-todo *ngFor="let todo of todoList.todos" [todo]="todo"></app-todo>
+    </div>
+    <ng-template #noTodyMessage>
+      <div class="alert alert-info">There is no any todo! Create new!</div>
+    </ng-template>
+    <hr>
+    <app-todo-form (onCreate)="onCreateTodoHandler($event)"></app-todo-form>
+  </div>
 </div>

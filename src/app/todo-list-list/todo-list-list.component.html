@@ -1,8 +1,15 @@
-<div *ngIf="todoListList.length > 0; else emptyList">
-  <app-todo-list
-          *ngFor="let todoList of todoListList"
+<div *ngIf="todoListList.length > 0; else emptyList"
+     class="panel-group"
+     id="accordion"
+     role="tablist"
+     aria-multiselectable="true">
+  <div
+          class="panel panel-default"
+          app-todo-list
+          *ngFor="let todoList of todoListList; let i = index;"
           [todoList]="todoList"
-  ></app-todo-list>
+          [orderIndex]="i"
+  ></div>
 </div>
 <ng-template #emptyList>
   <div class="alert alert-info">

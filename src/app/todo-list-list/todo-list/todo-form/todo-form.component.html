@@ -1,3 +1,24 @@
-<p>
-  todo-form works!
-</p>
+<h5>Add New Todo</h5>
+<form>
+  <div class="form-group">
+    <input type="text"
+           class="form-control"
+           id="todoTitle"
+           [(ngModel)]="todoTitle"
+           placeholder="New Todo Title"
+           name="todoTitle">
+  </div>
+  <div class="form-group">
+    <textarea
+           class="form-control"
+           id="todoDescription"
+           [(ngModel)]="todoDescription"
+           placeholder="Description(optional)"
+           name="todoTitle"></textarea>
+  </div>
+  <button
+          class="btn btn-success"
+          [disabled]="todoTitle.trim() === ''"
+          (click)="onSubmitForm($event)"
+  >Add</button>
+</form>
