@@ -9,3 +9,17 @@
     right: 0;
     top: 0;
 }
+
+.category-details .edit-title-form
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    z-index: 99999;
+}
+
+#categoryTitleEdit::placeholder
+{
+    color: red;
+}
