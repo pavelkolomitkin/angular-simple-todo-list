@@ -10,17 +10,9 @@ export class CategoryItemComponent implements OnInit {
 
   @Input() category: Category = null;
 
-  @Output('onSelect') onSelectItem: EventEmitter<Category> = new EventEmitter<Category>();
-
   constructor() { }
 
   ngOnInit() {
-  }
-
-
-  onClickHandler($event)
-  {
-    this.onSelectItem.emit(this.category);
   }
 
 }

@@ -26,7 +26,7 @@ export class CategoryListComponent implements OnInit {
     this.categories.push(category);
   }
 
-  onSelectCategoryHandler(category: Category)
+  onItemClickHandler(category: Category)
   {
     this.selectedItem = category;
     this.onCategorySelected.emit(this.selectedItem);

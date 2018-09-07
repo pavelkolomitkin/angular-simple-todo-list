@@ -1,3 +1,11 @@
-<p>
-  todo-list-list works!
-</p>
+<div *ngIf="todoListList.length > 0; else emptyList">
+  <app-todo-list
+          *ngFor="let todoList of todoListList"
+          [todoList]="todoList"
+  ></app-todo-list>
+</div>
+<ng-template #emptyList>
+  <div class="alert alert-info">
+    There is no any todo lists! Create new!
+  </div>
+</ng-template>

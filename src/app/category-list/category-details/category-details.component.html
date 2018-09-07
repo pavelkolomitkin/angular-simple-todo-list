@@ -1,6 +1,9 @@
 <div class="category-details" *ngIf="category !== null; else categoryNotSet;">
   <h3>{{ category.title }}</h3>
-  <app-todo-list-list></app-todo-list-list>
+  <app-todo-list-list
+          [todoListList]="category.todoLists"
+  ></app-todo-list-list>
+  <app-todo-list-form (onCreate)="onTodoListCreateHandler($event)"></app-todo-list-form>
 </div>
 <ng-template #categoryNotSet>
   <div class="alert alert-info">

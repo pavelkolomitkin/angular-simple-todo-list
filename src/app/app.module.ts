@@ -12,6 +12,7 @@ import { TodoListComponent } from './todo-list-list/todo-list/todo-list.componen
 import { TodoComponent } from './todo-list-list/todo-list/todo/todo.component';
 import { TodoFormComponent } from './todo-list-list/todo-list/todo-form/todo-form.component';
 import {FormsModule} from '@angular/forms';
+import { TodoListFormComponent } from './todo-list-list/todo-list-form/todo-list-form.component';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import {FormsModule} from '@angular/forms';
     TodoListListComponent,
     TodoListComponent,
     TodoComponent,
-    TodoFormComponent
+    TodoFormComponent,
+    TodoListFormComponent
   ],
   imports: [
     BrowserModule, FormsModule
