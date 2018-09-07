@@ -6,6 +6,6 @@
         <app-category-list (onCategorySelected)="onCategorySelectHandler($event)" [categories]="categories"></app-category-list>
     </div>
     <div class="col-md-9">
-        <app-category-details [category]="selectedCategory"></app-category-details>
+        <app-category-details [category]="selectedCategory" (onDelete)="onCategoryDeleteHandler($event)"></app-category-details>
     </div>
 </div>

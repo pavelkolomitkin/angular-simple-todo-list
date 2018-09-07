@@ -1,0 +1,11 @@
+.category-details
+{
+    position: relative;
+}
+
+.category-details .controls
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+}

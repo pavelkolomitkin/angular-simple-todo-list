@@ -18,4 +18,19 @@ export class AppComponent {
       console.log(category);
       this.selectedCategory = category;
   }
+
+  onCategoryDeleteHandler(category: Category)
+  {
+      if (category === null)
+      {
+          return;
+      }
+
+      const deletedCategoryIndex = this.categories.indexOf(category);
+      if ((this.categories.length > deletedCategoryIndex) && (deletedCategoryIndex >= 0))
+      {
+          this.categories.splice(deletedCategoryIndex, 1);
+          this.selectedCategory = null;
+      }
+  }
 }

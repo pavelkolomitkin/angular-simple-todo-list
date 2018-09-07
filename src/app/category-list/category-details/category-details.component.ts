@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Category} from '../../models/category.model';
 import {TodoList} from '../../models/todolist.model';
 
@@ -11,6 +11,8 @@ export class CategoryDetailsComponent implements OnInit {
 
   @Input() category: Category = null;
 
+  @Output('onDelete') onDeleteCategory: EventEmitter<Category> = new EventEmitter<Category>();
+
   constructor() { }
 
   ngOnInit() {
@@ -19,6 +21,11 @@ export class CategoryDetailsComponent implements OnInit {
   onTodoListCreateHandler(todoList: TodoList)
   {
     this.category.addTodoList(todoList);
+  }
+
+  onDeleteCategoryHandler(category: Category)
+  {
+      this.onDeleteCategory.emit(category);
   }
 
 }

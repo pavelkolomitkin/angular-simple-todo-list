@@ -1,9 +1,28 @@
 <div class="category-details" *ngIf="category !== null; else categoryNotSet;">
   <h3>{{ category.title }}</h3>
+  <div class="btn btn-danger controls" type="button" data-toggle="modal" data-target="#exampleModal">Delete</div>
   <app-todo-list-list
           [todoListList]="category.todoLists"
   ></app-todo-list-list>
   <app-todo-list-form (onCreate)="onTodoListCreateHandler($event)"></app-todo-list-form>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="exampleModalLabel">Delete Category?</h4>
+        </div>
+        <div class="modal-body">
+          Are you sure that you want to remove the category "{{ category.title }}" and all its todo lists?
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="onDeleteCategoryHandler(category)">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <ng-template #categoryNotSet>
   <div class="alert alert-info">
