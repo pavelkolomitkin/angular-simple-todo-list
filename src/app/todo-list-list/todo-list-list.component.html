@@ -9,6 +9,7 @@
           *ngFor="let todoList of todoListList; let i = index;"
           [todoList]="todoList"
           [orderIndex]="i"
+          (onDelete)="onDeleteTodoListHandler(todoList)"
   ></div>
 </div>
 <ng-template #emptyList>

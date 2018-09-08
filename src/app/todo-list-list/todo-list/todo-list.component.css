@@ -1,6 +1,7 @@
 .todo-header
 {
     padding: 0 !important;
+    position: relative;
 }
 
 .todo-header .link-button
@@ -8,4 +9,11 @@
     padding: 15px;
     display: block;
     text-decoration: none;
+}
+
+.todo-header .controls
+{
+    position: absolute;
+    top: 7px;
+    right: 10px;
 }

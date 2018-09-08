@@ -9,6 +9,9 @@
       {{ todoList.title }} <b>{{ todoList.todos.length }}</b>
     </a>
   </h4>
+  <div class="controls">
+    <span class="btn btn-danger" type="button" data-toggle="modal" [attr.data-target]="'#deleteTodoList' + orderIndex">Delete</span>
+  </div>
 </div>
 <div [attr.id]="'todo-list-' + orderIndex" class="panel-collapse collapse" role="tabpanel" [attr.aria-labelledby]="'todo-head-' + orderIndex">
   <div class="panel-body">
@@ -20,5 +23,23 @@
     </ng-template>
     <hr>
     <app-todo-form (onCreate)="onCreateTodoHandler($event)"></app-todo-form>
+  </div>
+</div>
+
+<div class="modal fade" [attr.id]="'deleteTodoList' + orderIndex" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="exampleModalLabel">Delete Todo List?</h4>
+      </div>
+      <div class="modal-body">
+        Are you sure that you want to remove the Todo List "{{ todoList.title }}"?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="onDeleteTodoListHandler($event)">Yes</button>
+      </div>
+    </div>
   </div>
 </div>

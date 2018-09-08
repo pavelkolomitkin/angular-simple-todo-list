@@ -15,4 +15,13 @@ export class TodoListListComponent implements OnInit {
   ngOnInit() {
   }
 
+  onDeleteTodoListHandler(list: TodoList)
+  {
+    const deletedListIndex = this.todoListList.indexOf(list);
+    if (deletedListIndex !== -1)
+    {
+      this.todoListList.splice(deletedListIndex, 1);
+    }
+  }
+
 }
